@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorReportes", "GestorReportes.csproj", "{E46C53CD-2C69-45F7-B93A-F50D00CA94FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{DA7ED39E-BF94-4068-9DDC-9445CA59FD4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E46C53CD-2C69-45F7-B93A-F50D00CA94FC}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E46C53CD-2C69-45F7-B93A-F50D00CA94FC}.Debug|Any CPU.Build.0 = Debug|x86
+		{E46C53CD-2C69-45F7-B93A-F50D00CA94FC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E46C53CD-2C69-45F7-B93A-F50D00CA94FC}.Debug|x86.Build.0 = Debug|Any CPU
+		{E46C53CD-2C69-45F7-B93A-F50D00CA94FC}.Release|Any CPU.ActiveCfg = Release|x86
+		{E46C53CD-2C69-45F7-B93A-F50D00CA94FC}.Release|Any CPU.Build.0 = Release|x86
+		{E46C53CD-2C69-45F7-B93A-F50D00CA94FC}.Release|x86.ActiveCfg = Release|x86
+		{E46C53CD-2C69-45F7-B93A-F50D00CA94FC}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

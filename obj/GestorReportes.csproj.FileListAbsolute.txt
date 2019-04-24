@@ -1,0 +1,80 @@
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\GestorReportes.Frm_Principal.resources
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\GestorReportes.Properties.Resources.resources
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\GestorReportes.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\bin\Debug\SaariReportes.exe
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\bin\Debug\SaariReportes.pdb
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\SaariReportes.exe
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\SaariReportes.pdb
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\bin\Debug\SaariReportes.exe.config
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\bin\Debug\Interop.FastReport.dll
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\Interop.FastReport.dll
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\GestorReportes.csproj.ResolveComReference.cache
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\GestorReportes.FrxDataTable.resources
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\GestorReportes.FrxDataView.resources
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\bin\Debug\AxInterop.FastReport.dll
+C:\Documents and Settings\Administrador\Escritorio\GestorReportes\obj\Debug\AxInterop.FastReport.dll
+C:\Dev_Reportes\GestorReportes\bin\Debug\SaariReportes.exe.config
+C:\Dev_Reportes\GestorReportes\obj\Debug\SaariReportes.exe
+C:\Dev_Reportes\GestorReportes\obj\Debug\SaariReportes.pdb
+C:\Dev_Reportes\GestorReportes\bin\Debug\SaariReportes.exe
+C:\Dev_Reportes\GestorReportes\bin\Debug\SaariReportes.pdb
+C:\Dev_Reportes\GestorReportes\bin\Debug\Interop.FastReport.dll
+C:\Dev_Reportes\GestorReportes\bin\Debug\AxInterop.FastReport.dll
+C:\Dev_Reportes\GestorReportes\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev_Reportes\GestorReportes\obj\Debug\Interop.FastReport.dll
+C:\Dev_Reportes\GestorReportes\obj\Debug\AxInterop.FastReport.dll
+C:\Dev_Reportes\GestorReportes\obj\Debug\GestorReportes.csproj.ResolveComReference.cache
+C:\Dev_Reportes\GestorReportes\obj\Debug\GestorReportes.FrxDataTable.resources
+C:\Dev_Reportes\GestorReportes\obj\Debug\GestorReportes.FrxDataView.resources
+C:\Dev_Reportes\GestorReportes\obj\Debug\GestorReportes.Frm_Principal.resources
+C:\Dev_Reportes\GestorReportes\obj\Debug\GestorReportes.Properties.Resources.resources
+C:\Dev_Reportes\GestorReportes\obj\Debug\GestorReportes.csproj.GenerateResource.Cache
+C:\Dev_Reportes\GestorReportes_\bin\Debug\SaariReportes.exe.config
+C:\Dev_Reportes\GestorReportes_\obj\Debug\SaariReportes.exe
+C:\Dev_Reportes\GestorReportes_\obj\Debug\SaariReportes.pdb
+C:\Dev_Reportes\GestorReportes_\bin\Debug\SaariReportes.exe
+C:\Dev_Reportes\GestorReportes_\bin\Debug\SaariReportes.pdb
+C:\Dev_Reportes\GestorReportes_\bin\Debug\Interop.FastReport.dll
+C:\Dev_Reportes\GestorReportes_\bin\Debug\AxInterop.FastReport.dll
+C:\Dev_Reportes\GestorReportes_\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev_Reportes\GestorReportes_\obj\Debug\Interop.FastReport.dll
+C:\Dev_Reportes\GestorReportes_\obj\Debug\AxInterop.FastReport.dll
+C:\Dev_Reportes\GestorReportes_\obj\Debug\GestorReportes.csproj.ResolveComReference.cache
+C:\Dev_Reportes\GestorReportes_\obj\Debug\GestorReportes.FrxDataTable.resources
+C:\Dev_Reportes\GestorReportes_\obj\Debug\GestorReportes.FrxDataView.resources
+C:\Dev_Reportes\GestorReportes_\obj\Debug\GestorReportes.Frm_Principal.resources
+C:\Dev_Reportes\GestorReportes_\obj\Debug\GestorReportes.Properties.Resources.resources
+C:\Dev_Reportes\GestorReportes_\obj\Debug\GestorReportes.csproj.GenerateResource.Cache
+C:\Dev_Reportes\GestorReportes2.1\bin\Debug\SaariReportes.exe.config
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\SaariReportes.exe
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\SaariReportes.pdb
+C:\Dev_Reportes\GestorReportes2.1\bin\Debug\SaariReportes.exe
+C:\Dev_Reportes\GestorReportes2.1\bin\Debug\SaariReportes.pdb
+C:\Dev_Reportes\GestorReportes2.1\bin\Debug\Interop.FastReport.dll
+C:\Dev_Reportes\GestorReportes2.1\bin\Debug\AxInterop.FastReport.dll
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\Interop.FastReport.dll
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\AxInterop.FastReport.dll
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\GestorReportes.csproj.ResolveComReference.cache
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\GestorReportes.FrxDataTable.resources
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\GestorReportes.FrxDataView.resources
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\GestorReportes.Frm_Principal.resources
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\GestorReportes.Properties.Resources.resources
+C:\Dev_Reportes\GestorReportes2.1\obj\Debug\GestorReportes.csproj.GenerateResource.Cache
+C:\Dev_Reportes\GestorReportes2.2\bin\Debug\SaariReportes.exe.config
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\SaariReportes.exe
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\SaariReportes.pdb
+C:\Dev_Reportes\GestorReportes2.2\bin\Debug\SaariReportes.exe
+C:\Dev_Reportes\GestorReportes2.2\bin\Debug\SaariReportes.pdb
+C:\Dev_Reportes\GestorReportes2.2\bin\Debug\Interop.FastReport.dll
+C:\Dev_Reportes\GestorReportes2.2\bin\Debug\AxInterop.FastReport.dll
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\Interop.FastReport.dll
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\AxInterop.FastReport.dll
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\GestorReportes.csproj.ResolveComReference.cache
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\GestorReportes.FrxDataTable.resources
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\GestorReportes.FrxDataView.resources
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\GestorReportes.Frm_Principal.resources
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\GestorReportes.Properties.Resources.resources
+C:\Dev_Reportes\GestorReportes2.2\obj\Debug\GestorReportes.csproj.GenerateResource.Cache

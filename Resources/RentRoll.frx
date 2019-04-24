@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="07/09/2014 14:32:50" ReportInfo.Modified="08/24/2015 19:58:46" ReportInfo.CreatorVersion="2014.4.0.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+    private void Text30_AfterData(object sender, EventArgs e)
+    {
+      decimal valor=0; 
+      valor= Convert.ToDecimal(Text29.Value);
+      if(valor&gt;0)
+      {
+        try
+        {
+          decimal area=0;
+        
+          area= Convert.ToDecimal(Text9.Value); 
+          decimal pct= valor / area;
+          Text30.Text =pct.ToString(&quot;###%&quot;);
+          
+        }
+        catch(Exception ex1)
+        {
+          MessageBox.Show(&quot;Error al calcular % de ocupacion. &quot;, &quot;Error&quot;);
+        }
+      }
+      else
+      {
+        decimal pct=0M;
+        Text30.Text= pct.ToString(&quot;0%&quot;);
+      }
+    }
+  }
+}
+</ScriptText>
+  <Styles>
+    <Style Name="Relleno Gris" Border.Lines="All" Border.Color="DimGray" Fill.Color="34, 98, 145" TextFill.Color="White" Font="Arial Narrow, 9pt, style=Bold"/>
+    <Style Name="Relleno Amarillo" Fill.Color="Yellow" ApplyBorder="false" ApplyTextFill="false" ApplyFont="false"/>
+    <Style Name="Relleno Azul" Fill.Color="219, 230, 240" ApplyBorder="false" ApplyTextFill="false" ApplyFont="false"/>
+    <Style Name="Relleno Azul Marino" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" TextFill.Color="White" Font="Arial, 8pt, style=Bold"/>
+    <Style Name="Relleno Azul Cielo" Fill.Color="149, 179, 215" TextFill.Color="21, 62, 91" Font="Arial, 10pt, style=Bold" ApplyBorder="false"/>
+    <Style Name="Relleno Azul Marino L10" Border.Lines="All" Border.Color="DimGray" Border.Width="2" Fill.Color="34, 98, 145" TextFill.Color="White" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Gris Totales" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" Font="Arial, 10pt, style=Bold"/>
+  </Styles>
+  <Dictionary>
+    <Parameter Name="Parameter" DataType="System.String"/>
+    <Parameter Name="rentaOcupada" DataType="System.String"/>
+    <Parameter Name="pctOcupacion" DataType="System.String"/>
+    <Total Name="TotalAreaConstruccion" Expression="[Registro.MetrosCuadradosConstruccion]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+    <Total Name="TotalAreaDisponible" Expression="[Registro.MetrosCuadradosDisponibles]" Evaluator="Data1"/>
+    <Total Name="PrecioPromedioM2" TotalType="Avg" Expression="[Registro.PrecioMetroCuadrado]" Evaluator="Data1"/>
+    <Total Name="TotalContratos" Expression="[Registro.ImporteRentaEmitido]" Evaluator="Data1"/>
+    <Total Name="TotalRentaVariableEmitido" Expression="[Registro.RentaVariableEmitida]" Evaluator="Data1"/>
+    <Total Name="TotalMantenimientoEmitido" Expression="[Registro.ImporteMantenimientoEmitido]" Evaluator="Data1"/>
+    <Total Name="TotalPublicidadEmitido" Expression="[Registro.ImportePublicidadEmitido]" Evaluator="Data1"/>
+    <Total Name="TotalServiciosEmitido" Expression="[Registro.ImporteServiciosEmitido]" Evaluator="Data1"/>
+    <Total Name="TotalOtrosEmitido" Expression="[Registro.OtrosEmitidos]" Evaluator="Data1"/>
+    <Total Name="TotalEmitido" Expression="[Registro.TotalEmitido]" Evaluator="Data1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="355.6" PaperHeight="215.9" RawPaperSize="5" FirstPageSource="1" OtherPagesSource="1">
+    <ReportTitleBand Name="ReportTitle1" Width="1268.57" Height="145.53">
+      <TextObject Name="Text2" Top="18.9" Width="359.1" Height="18.9" Text="[Encabezado.Inmobiliaria]" Font="Arial, 12pt, style=Bold" TextFill.Color="54, 96, 146"/>
+      <TextObject Name="Text3" Top="37.8" Width="359.1" Height="18.9" Text="[Encabezado.Conjunto]" Font="Arial, 12pt, style=Bold" TextFill.Color="54, 96, 146"/>
+      <TextObject Name="Text4" Top="56.7" Width="359.1" Height="18.9" Text="[Encabezado.FechaInicio]" Font="Arial, 12pt, style=Bold" TextFill.Color="54, 96, 146"/>
+      <TextObject Name="Text5" Top="75.6" Width="359.1" Height="18.9" Text="Cifras no incluyen IVA" Font="Arial, 10pt, style=Italic" TextFill.Color="54, 96, 146"/>
+      <TextObject Name="Text6" Top="94.5" Width="113.4" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="NÚMERO DE LOCAL" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text8" Left="362.1" Top="94.5" Width="69.93" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="AREA&#13;&#10;m² " HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text11" Left="586.9" Top="94.5" Width="113.4" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="VALOR DEL CONTRATO" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text12" Left="804.7" Top="94.5" Width="85.05" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="MTTO" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text42" Left="113.95" Top="94.5" Width="248.35" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="NOMBRE COMERCIAL" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text44" Left="431.7" Top="94.5" Width="69.93" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="m² &#13;&#10;DISP." HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text45" Left="501.85" Top="94.5" Width="85.05" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="PRECIO POR&#13;&#10;m² " HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text46" Left="700.75" Top="94.5" Width="103.95" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="RENTA VARIABLE" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text47" Left="889.3" Top="94.5" Width="85.05" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="PUB" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text48" Left="973.35" Top="94.5" Width="85.05" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="SERVICIOS" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text49" Left="1058.4" Top="94.5" Width="85.05" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="OTROS" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+      <TextObject Name="Text50" Left="1143.45" Top="94.5" Width="122.85" Height="47.25" Border.Lines="All" Border.Color="Silver" Border.Width="1.5" Fill.Color="34, 98, 145" Text="TOTAL" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White" Style="Relleno Azul Marino"/>
+    </ReportTitleBand>
+    <GroupHeaderBand Name="GroupHeader2" Top="149.53" Width="1268.57" Height="28.35" Condition="[Registro.Moneda]" SortOrder="Descending">
+      <TextObject Name="Text22" Top="9.45" Width="1266.3" Height="18.9" Fill.Color="WhiteSmoke" Text="          [Registro.Moneda]" VertAlign="Center" Font="Arial, 9pt, style=Italic" TextFill.Color="DimGray" Wysiwyg="true"/>
+      <GroupHeaderBand Name="GroupHeader1" Top="181.88" Width="1268.57" Height="18.9" Condition="[Registro.ClasificacionUbicacion]">
+        <TextObject Name="Text21" Left="113.4" Width="245.7" Height="18.9" Fill.Color="149, 179, 215" Text="[Registro.ClasificacionUbicacion]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Italic" FirstTabOffset="189"/>
+        <TextObject Name="Text53" Left="359.1" Width="907.2" Height="18.9" Fill.Color="149, 179, 215" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Italic" FirstTabOffset="189"/>
+        <TextObject Name="Text54" Width="113.4" Height="18.9" Fill.Color="149, 179, 215" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Italic" FirstTabOffset="189"/>
+        <DataBand Name="Data1" Top="204.78" Width="1268.57" Height="21.03" CanGrow="true">
+          <TextObject Name="Text28" Left="1143.45" Width="122.85" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.TotalEmitido]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+          <TextObject Name="Text27" Left="1058.4" Width="85.05" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.OtrosEmitidos]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+          <TextObject Name="Text52" Left="973.35" Width="85.05" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.ImporteServiciosEmitido]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+          <TextObject Name="Text43" Left="112.85" Top="1" Width="245.7" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.NombreCliente]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TextObject Name="Text24" Left="585.9" Top="1" Width="113.4" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.ImporteRentaEmitido]" Padding="10, 0, 10, 0" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt" Wysiwyg="true"/>
+          <TextObject Name="Text25" Left="803.25" Top="1" Width="85.05" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.ImporteMantenimientoEmitido]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+          <TextObject Name="Text26" Left="888.3" Top="1" Width="85.05" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.ImportePublicidadEmitido]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+          <TextObject Name="Text31" Left="699.3" Top="1" Width="103.95" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.RentaVariableEmitida]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+          <TextObject Name="Text23" Left="357.65" Top="1" Width="75.6" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.MetrosCuadradosConstruccion]" Format="Number" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TextObject Name="Text51" Left="433.7" Top="1" Width="66.15" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.MetrosCuadradosDisponibles]" Format="Number" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TextObject Name="Text1" Left="500.85" Top="2.13" Width="85.05" Height="18.9" Fill.Color="White" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.PrecioMetroCuadrado]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+          <TextObject Name="Text55" Top="1.13" Width="113.4" Height="18.9" CanGrow="true" GrowToBottom="true" EvenStyle="Relleno Azul" Text="[Registro.NombreInmueble]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <Sort>
+            <Sort Expression="[Registro.NombreInmueble]"/>
+          </Sort>
+        </DataBand>
+        <GroupFooterBand Name="GroupFooter1" Top="229.81" Width="1268.57"/>
+      </GroupHeaderBand>
+      <GroupFooterBand Name="GroupFooter2" Top="233.81" Width="1268.57"/>
+    </GroupHeaderBand>
+    <DataBand Name="Data2" Top="237.81" Width="1268.57" Height="9.45"/>
+    <ReportSummaryBand Name="ReportSummary1" Top="251.26" Width="1268.57" Height="170.1" Guides="0">
+      <TextObject Name="Text38" Left="-1" Width="359.1" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" CanGrow="true" EvenStylePriority="UseAll" Text="TOTALES" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text40" Left="9.45" Top="141.75" Width="47.25" Height="28.35" Text="Nota:" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text41" Left="66.15" Top="141.75" Width="255.15" Height="28.35" Fill.Color="White" Text="Otros; incluye otros cargos no catalogados, contraprestación (totem)" Font="Arial, 8pt"/>
+      <TextObject Name="Text9" Left="358.7" Width="75.6" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" CanGrow="true" EvenStylePriority="UseAll" Text="[TotalAreaConstruccion]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text7" Left="434.7" Width="66.15" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" CanGrow="true" Text="[TotalAreaDisponible]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text13" Left="500.85" Width="85.05" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" Text="[PrecioPromedioM2]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text14" Left="585.9" Width="113.4" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" Text="[TotalContratos]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text15" Left="699.3" Width="103.95" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" Text="[TotalRentaVariableEmitido]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text16" Left="803.25" Width="85.05" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" Text="[TotalMantenimientoEmitido]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text17" Left="888.3" Width="85.05" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" Text="[TotalPublicidadEmitido]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text18" Left="973.35" Width="85.05" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" Text="[TotalServiciosEmitido]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text19" Left="1058.4" Width="85.05" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" Text="[TotalOtrosEmitido]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text20" Left="1143.45" Width="122.85" Height="18.9" Border.Lines="All" Border.Color="Gray" Border.Width="1.5" Fill.Color="Silver" Text="[TotalEmitido]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Gris Totales"/>
+      <TextObject Name="Text57" Left="500.85" Top="18.9" Width="85.05" Height="37.8" Border.Lines="All" Border.Color="Silver" Border.Width="2" Fill.Color="240, 240, 240" Text="Precio Promedio" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text58" Left="359.1" Top="18.9" Width="75.6" Height="37.8" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="Area Total m²" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text59" Left="434.7" Top="18.9" Width="66.15" Height="37.8" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="Area Total Disp. m²" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text60" Left="585.9" Top="18.9" Width="113.4" Height="37.8" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="Total Contratos" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text61" Left="699.3" Top="18.9" Width="103.95" Height="37.8" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="Total Renta Variable" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text62" Left="803.25" Top="18.9" Width="85.05" Height="37.8" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="Total Mantenimiento" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text63" Left="888.3" Top="18.9" Width="85.05" Height="37.8" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="Total Publicidad" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text64" Left="973.35" Top="18.9" Width="85.05" Height="37.8" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="Total Servicios" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text65" Left="1058.4" Top="18.9" Width="85.05" Height="37.8" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="Total Otros" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text66" Left="1143.45" Top="18.9" Width="122.85" Height="37.8" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="Total Emitido" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text10" Left="226.8" Top="56.7" Width="132.3" Height="18.9" Border.Lines="All" Border.Color="Gray" Fill.Color="219, 230, 240" Text="Area Rentada m²" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text67" Left="226.8" Top="75.6" Width="132.3" Height="18.9" Border.Lines="All" Border.Color="Gray" Fill.Color="219, 230, 240" Text="% Ocupación" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text69" Left="226.8" Top="94.5" Width="132.3" Height="18.9" Border.Lines="All" Border.Color="Gray" Fill.Color="219, 230, 240" Text="Precio Promedio" HorzAlign="Right" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text70" Left="359.1" Top="94.5" Width="75.6" Height="18.9" Border.Lines="All" Border.Color="Gray" Text="[PrecioPromedioM2]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text29" Left="359.1" Top="56.7" Width="75.6" Height="18.9" Border.Lines="All" Border.Color="Gray" Text="[[TotalAreaConstruccion] - [TotalAreaDisponible]]&#13;&#10;" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text30" Left="359.1" Top="75.6" Width="75.6" Height="18.9" Border.Lines="All" Border.Color="Gray" AfterDataEvent="Text30_AfterData" Text="[pctOcupacion]" Format="Percent" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text32" Left="1143.45" Top="75.6" Width="122.85" Height="18.9" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="[Total.TotalDescuentos]" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text71" Left="1143.45" Top="94.5" Width="122.85" Height="18.9" Border.Lines="All" Border.Color="Silver" Fill.Color="240, 240, 240" Text="[Total.GranTotal]" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text33" Left="1048.95" Top="75.6" Width="94.5" Height="18.9" Border.Lines="All" Border.Color="DarkGray" Fill.Color="Silver" Text="Descuentos:" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text72" Left="1048.95" Top="94.5" Width="94.5" Height="18.9" Border.Lines="All" Border.Color="DarkGray" Fill.Color="Silver" Text="Gran Total:" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>

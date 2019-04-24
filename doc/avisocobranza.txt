@@ -1,0 +1,3 @@
+avisocobranza renta "C:\SaariDB\Formatos\Reportes\MIESLocal\AvisoCobranza.frx" Admin
+
+avisocobranza venta "C:\SaariDB\Formatos\Reportes\MIESLocal\AvisoCobranza.frx" Admin

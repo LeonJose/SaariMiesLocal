@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E46C53CD-2C69-45F7-B93A-F50D00CA94FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestorReportes</RootNamespace>
+    <AssemblyName>SaariMIESLocal</AssemblyName>
+    <ApplicationIcon>IconoSAARI.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.FastReport, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\Dev10\Documents\Pabick\AxInterop.FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2014.4.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DEV\FastReports\2014.1.2.0\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=2014.4.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DEV\FastReports\2014.1.2.0\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2014.4.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DEV\FastReports\2014.1.2.0\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="SaariIcon, Version=1.1.1.5, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Desarrollo\Archivos de implementacion\Icon\SaariIcon 1.1.1.6\SaariIcon.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer\Abstracts\SaariReport.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\AcumulableParaImpuestos.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\Agenda.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\AuditoriaCobranza.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\AuditoriaContratos.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\Bitacora.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\CarteraVencida306090.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\CarteraVencidaVenta.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\CFDIsCancelados.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\CFDIsConsecutivos.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\ComprobantePago.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\ConsecutivosCFDIsFact.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\CuentasXPagar306090.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\EstatusCobranza.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\ImpuestosReporte.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\MantenimientoGastos.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\RecibosCobradosPorFolio.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\RecordatorioCobranza.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\ConfiguracionesPolizas.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\EstadoDeCuentaCliente.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\EstadoDeCuentaRenta.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\FichaInformativa.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\FlujoNeto.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\ListadoContratosRenta.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\Mantenimiento.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\PolizaCopropietarios.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\RecibosExpedidosPorFolio.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\ReporteEgreso.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\ReporteGlobal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessLayer\ComponentLayer\ReporteResumen.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\SaariIconPrueba.cs" />
+    <Compile Include="BusinessLayer\DataAccessLayer\PolizasCopropietariosDAL.cs" />
+    <Compile Include="BusinessLayer\DataAccessLayer\SaariE.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessLayer\EntitiesPolizas\ConceptoGeneralEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\CopropiedadEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\EgresoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\FormatoExportacionPoliza.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\Incrementos.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\InformeAntilavado.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\InformeAntilavado2.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\Inmobiliaria.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\Listado.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\ListadoClientes.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\LogAntilavado.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\PictureBoxRT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BusinessLayer\ComponentLayer\Poliza.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\RentRoll.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\Reporte.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\ReporteFacturacion.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\RepresentacionImpresaXMLAntilavado.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\SaldoVenta.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\XMLAntilavado.cs" />
+    <Compile Include="BusinessLayer\DataAccessLayer\Arrendadora.cs">
+      <DependentUpon>Arrendadora.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLayer\DataAccessLayer\Arrendadora.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Arrendadora.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLayer\DataAccessLayer\Informes.cs" />
+    <Compile Include="BusinessLayer\DataAccessLayer\ODBCQuery.cs" />
+    <Compile Include="BusinessLayer\DataAccessLayer\Polizas.cs" />
+    <Compile Include="BusinessLayer\DataAccessLayer\SaariDB.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\Alerta.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\Aviso.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\CaracteristicasInmueble.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\Domicilio.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\Informe.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\Liquidacion.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\Operacion.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\Persona.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\PersonaFisica.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\PersonaMoral.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\SujetoObligado.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntilavado2\Telefono.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\Alerta.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\AlertaPorPersona.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\Aviso.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\CaracteristicasInmueble.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\Cheque.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\DetalleInstrumento.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\Domicilio.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\FacturaTotalPorCliente.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\Informe.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\Liquidacion.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\Operacion.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\OperacionVenta.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\Persona.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\PersonaFisica.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\PersonaMoral.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\SujetoObligado.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\Telefono.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\TransferenciaInterbancaria.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\TransferenciaInternacional.cs" />
+    <Compile Include="BusinessLayer\EntitiesAntiLavado\TransferenciaMismoBanco.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\CargoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\ColumnasExcelEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\CondicionesEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\ConfiguracionPolizaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\EncabezadoPolizaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\FormulaPolizaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\AcumulablesImpuestosEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\AnalisisDeudores.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\BitacoraEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ClaveMetodoPagoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ComprobantePagoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ConfiguracionMoratoriosEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ConjuntoInmobiliaria.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ContratosAnalisisEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\CXP306090Entity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\CXPConfiguracionReporte.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\DocumentosRelacionados.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\EncabezadoReprotes.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\EstadoCobranzaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\Fechas.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\GastoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\mantGastosEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ProveedorEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ProvisionEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\RecibosExpedidosxFolio.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ReporteGlobalEsntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ReporteImpuestos.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\RepoteGlobal.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\SaldoAFavorEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\TotalesImpuestosAcumulables.cs" />
+    <Compile Include="BusinessLayer\Entities\ModuloCobranzaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\MovimientoExcelEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\MovimientoPolizaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\PolizaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\PolizaExcelEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\RecibosEntitys.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\RegistroEgresoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\SucursalEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\AgendaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\AuditoriaContratoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\BancosRentRoll.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\Cartera306090Entity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\CarteraVencidaVentaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\CFDICanceladoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\CFDIConsecutivoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ClienteEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ConceptoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ConjuntoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ContratoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ContratosEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\CuentaBancariaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\DatosContactoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\DepositoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\DomicilioEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\EdificioEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\EdificiosYContratos.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\EgresoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\EncabezadoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\EstatusContratoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\Formatos.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\InmobiliariaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\MantenimientoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\Orden.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\PagoVencidoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\PersonaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\ReciboEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\RegistroFacturacionEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\RentRollEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\SaldoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\SaldosAuditoriaEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\SaldosEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\SubtipoEntity.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\TotalesRecibosExpedidos.cs" />
+    <Compile Include="BusinessLayer\EntitiesReportes\TotalesRentRollEntity.cs" />
+    <Compile Include="BusinessLayer\Helpers\CambioProgresoEventArgs.cs" />
+    <Compile Include="BusinessLayer\Helpers\filtroReportes.cs" />
+    <Compile Include="BusinessLayer\Helpers\HelpInmobiliarias.cs" />
+    <Compile Include="BusinessLayer\Helpers\MetodosGenerales.cs" />
+    <Compile Include="BusinessLayer\Interfaces\IBackgroundReport.cs" />
+    <Compile Include="BusinessLayer\Interfaces\IReport.cs" />
+    <Compile Include="FrxDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrxDataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrxDataView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Controls\Ctrl_AlertaPorPersona.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Controls\Ctrl_AlertaPorPersona.Designer.cs">
+      <DependentUpon>Ctrl_AlertaPorPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Controls\Ctrl_Opcion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Controls\Ctrl_Opcion.Designer.cs">
+      <DependentUpon>Ctrl_Opcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Controls\Ctrl_PolizaConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Controls\Ctrl_PolizaConfig.Designer.cs">
+      <DependentUpon>Ctrl_PolizaConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Controls\Frm_PruebaConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Controls\Frm_PruebaConsultas.Designer.cs">
+      <DependentUpon>Frm_PruebaConsultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_AcumulableParaImpuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_AcumulableParaImpuestos.Designer.cs">
+      <DependentUpon>Frm_AcumulableParaImpuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_AmortizacionRentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_AmortizacionRentas.Designer.cs">
+      <DependentUpon>Frm_AmortizacionRentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ComprobantesDePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ComprobantesDePago.Designer.cs">
+      <DependentUpon>Frm_ComprobantesDePago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ConsecutivosCFDIsFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ConsecutivosCFDIsFacturacion.Designer.cs">
+      <DependentUpon>Frm_ConsecutivosCFDIsFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_CXP306090.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_CXP306090.Designer.cs">
+      <DependentUpon>Frm_CXP306090.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_EstatusCobranza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_EstatusCobranza.Designer.cs">
+      <DependentUpon>Frm_EstatusCobranza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Impuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Impuestos.Designer.cs">
+      <DependentUpon>Frm_Impuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Mant_Gastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Mant_Gastos.designer.cs">
+      <DependentUpon>Frm_Mant_Gastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RecibosCobradoPorFolio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RecibosCobradoPorFolio.Designer.cs">
+      <DependentUpon>Frm_RecibosCobradoPorFolio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RecordatorioCobranza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RecordatorioCobranza.Designer.cs">
+      <DependentUpon>Frm_RecordatorioCobranza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_GenerarPolizaCopropiedad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_GenerarPolizaCopropiedad.Designer.cs">
+      <DependentUpon>Frm_GenerarPolizaCopropiedad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Controls\RTPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Auditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Auditoria.Designer.cs">
+      <DependentUpon>Frm_Auditoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_AuditoriaCobranza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_AuditoriaCobranza.Designer.cs">
+      <DependentUpon>Frm_AuditoriaCobranza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Buscar.Designer.cs">
+      <DependentUpon>Frm_Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_CapturaTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_CapturaTitulo.Designer.cs">
+      <DependentUpon>Frm_CapturaTitulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Cartera306090.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Cartera306090.Designer.cs">
+      <DependentUpon>Frm_Cartera306090.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_CarteraVencidaVta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_CarteraVencidaVta.Designer.cs">
+      <DependentUpon>Frm_CarteraVencidaVta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_CFDIsConsecutivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_CFDIsConsecutivos.Designer.cs">
+      <DependentUpon>Frm_CFDIsConsecutivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ConfigurarPoliza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ConfigurarPoliza.Designer.cs">
+      <DependentUpon>Frm_ConfigurarPoliza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ConfigurarPolizaEgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ConfigurarPolizaEgreso.Designer.cs">
+      <DependentUpon>Frm_ConfigurarPolizaEgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ListadoContratosRenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ListadoContratosRenta.Designer.cs">
+      <DependentUpon>Frm_ListadoContratosRenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_DetalleFlujoNeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_DetalleFlujoNeto.Designer.cs">
+      <DependentUpon>Frm_DetalleFlujoNeto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_EditarXMLAntilavado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_EditarXMLAntilavado.Designer.cs">
+      <DependentUpon>Frm_EditarXMLAntilavado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_EdoCtaCte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_EdoCtaCte.Designer.cs">
+      <DependentUpon>Frm_EdoCtaCte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_EdoCtaRenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_EdoCtaRenta.Designer.cs">
+      <DependentUpon>Frm_EdoCtaRenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_FichaInformativa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_FichaInformativa.Designer.cs">
+      <DependentUpon>Frm_FichaInformativa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_FichaInformativa2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_FichaInformativa2.Designer.cs">
+      <DependentUpon>Frm_FichaInformativa2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_FichaInformativa3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_FichaInformativa3.Designer.cs">
+      <DependentUpon>Frm_FichaInformativa3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_FormatoPolizaExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_FormatoPolizaExcel.Designer.cs">
+      <DependentUpon>Frm_FormatoPolizaExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_GenerarPoliza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_GenerarPoliza.Designer.cs">
+      <DependentUpon>Frm_GenerarPoliza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_GenerarPolizaEgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_GenerarPolizaEgreso.Designer.cs">
+      <DependentUpon>Frm_GenerarPolizaEgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_GenerarXMLAntilavado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_GenerarXMLAntilavado.Designer.cs">
+      <DependentUpon>Frm_GenerarXMLAntilavado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Incrementos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Incrementos.Designer.cs">
+      <DependentUpon>Frm_Incrementos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ListadoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ListadoClientes.Designer.cs">
+      <DependentUpon>Frm_ListadoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Mail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Mail.Designer.cs">
+      <DependentUpon>Frm_Mail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_Principal.Designer.cs">
+      <DependentUpon>Frm_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_CFDIsCancelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_CFDIsCancelados.Designer.cs">
+      <DependentUpon>Frm_CFDIsCancelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RecibosExpedidosPorFolio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RecibosExpedidosPorFolio.Designer.cs">
+      <DependentUpon>Frm_RecibosExpedidosPorFolio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RentadosYNoRentados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RentadosYNoRentados.Designer.cs">
+      <DependentUpon>Frm_RentadosYNoRentados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RentRoll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RentRoll.Designer.cs">
+      <DependentUpon>Frm_RentRoll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RepAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RepAgenda.Designer.cs">
+      <DependentUpon>Frm_RepAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RepBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RepBitacora.Designer.cs">
+      <DependentUpon>Frm_RepBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RepMant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RepMant.Designer.cs">
+      <DependentUpon>Frm_RepMant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteEgresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteEgresos.Designer.cs">
+      <DependentUpon>Frm_ReporteEgresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteFacturacion.Designer.cs">
+      <DependentUpon>Frm_ReporteFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteGlobal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteGlobal.Designer.cs">
+      <DependentUpon>Frm_ReporteGlobal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteResumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteResumen.Designer.cs">
+      <DependentUpon>Frm_ReporteResumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteSaldoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteSaldoVenta.Designer.cs">
+      <DependentUpon>Frm_ReporteSaldoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RepresentacionImpresaAntilavado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_RepresentacionImpresaAntilavado.Designer.cs">
+      <DependentUpon>Frm_RepresentacionImpresaAntilavado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ResumenFlujoNeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ResumenFlujoNeto.Designer.cs">
+      <DependentUpon>Frm_ResumenFlujoNeto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_TipoCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_TipoCambio.Designer.cs">
+      <DependentUpon>Frm_TipoCambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="FrxDataTable.resx">
+      <DependentUpon>FrxDataTable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrxDataView.resx">
+      <DependentUpon>FrxDataView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Controls\Ctrl_AlertaPorPersona.resx">
+      <DependentUpon>Ctrl_AlertaPorPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Controls\Ctrl_Opcion.resx">
+      <DependentUpon>Ctrl_Opcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Controls\Ctrl_PolizaConfig.resx">
+      <DependentUpon>Ctrl_PolizaConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Controls\Frm_PruebaConsultas.resx">
+      <DependentUpon>Frm_PruebaConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_AcumulableParaImpuestos.resx">
+      <DependentUpon>Frm_AcumulableParaImpuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_AmortizacionRentas.resx">
+      <DependentUpon>Frm_AmortizacionRentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ComprobantesDePago.resx">
+      <DependentUpon>Frm_ComprobantesDePago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ConsecutivosCFDIsFacturacion.resx">
+      <DependentUpon>Frm_ConsecutivosCFDIsFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_CXP306090.resx">
+      <DependentUpon>Frm_CXP306090.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_EstatusCobranza.resx">
+      <DependentUpon>Frm_EstatusCobranza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_Impuestos.resx">
+      <DependentUpon>Frm_Impuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_Mant_Gastos.resx">
+      <DependentUpon>Frm_Mant_Gastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_RecibosCobradoPorFolio.resx">
+      <DependentUpon>Frm_RecibosCobradoPorFolio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_RecordatorioCobranza.resx">
+      <DependentUpon>Frm_RecordatorioCobranza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_GenerarPolizaCopropiedad.resx">
+      <DependentUpon>Frm_GenerarPolizaCopropiedad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_Auditoria.resx">
+      <DependentUpon>Frm_Auditoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_AuditoriaCobranza.resx">
+      <DependentUpon>Frm_AuditoriaCobranza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_Buscar.resx">
+      <DependentUpon>Frm_Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_CapturaTitulo.resx">
+      <DependentUpon>Frm_CapturaTitulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_Cartera306090.resx">
+      <DependentUpon>Frm_Cartera306090.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_CarteraVencidaVta.resx">
+      <DependentUpon>Frm_CarteraVencidaVta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_CFDIsConsecutivos.resx">
+      <DependentUpon>Frm_CFDIsConsecutivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ConfigurarPoliza.resx">
+      <DependentUpon>Frm_ConfigurarPoliza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ConfigurarPolizaEgreso.resx">
+      <DependentUpon>Frm_ConfigurarPolizaEgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ListadoContratosRenta.resx">
+      <DependentUpon>Frm_ListadoContratosRenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_DetalleFlujoNeto.resx">
+      <DependentUpon>Frm_DetalleFlujoNeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_EditarXMLAntilavado.resx">
+      <DependentUpon>Frm_EditarXMLAntilavado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_EdoCtaCte.resx">
+      <DependentUpon>Frm_EdoCtaCte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_EdoCtaRenta.resx">
+      <DependentUpon>Frm_EdoCtaRenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_FichaInformativa.resx">
+      <DependentUpon>Frm_FichaInformativa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_FichaInformativa2.resx">
+      <DependentUpon>Frm_FichaInformativa2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_FichaInformativa3.resx">
+      <DependentUpon>Frm_FichaInformativa3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_FormatoPolizaExcel.resx">
+      <DependentUpon>Frm_FormatoPolizaExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_GenerarPoliza.resx">
+      <DependentUpon>Frm_GenerarPoliza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_GenerarPolizaEgreso.resx">
+      <DependentUpon>Frm_GenerarPolizaEgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_GenerarXMLAntilavado.resx">
+      <DependentUpon>Frm_GenerarXMLAntilavado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_Incrementos.resx">
+      <DependentUpon>Frm_Incrementos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ListadoClientes.resx">
+      <DependentUpon>Frm_ListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_Mail.resx">
+      <DependentUpon>Frm_Mail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_Principal.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_CFDIsCancelados.resx">
+      <DependentUpon>Frm_CFDIsCancelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_RecibosExpedidosPorFolio.resx">
+      <DependentUpon>Frm_RecibosExpedidosPorFolio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_RentadosYNoRentados.resx">
+      <DependentUpon>Frm_RentadosYNoRentados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_RentRoll.resx">
+      <DependentUpon>Frm_RentRoll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_RepAgenda.resx">
+      <DependentUpon>Frm_RepAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_RepBitacora.resx">
+      <DependentUpon>Frm_RepBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_RepMant.resx">
+      <DependentUpon>Frm_RepMant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ReporteEgresos.resx">
+      <DependentUpon>Frm_ReporteEgresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ReporteFacturacion.resx">
+      <DependentUpon>Frm_ReporteFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ReporteGlobal.resx">
+      <DependentUpon>Frm_ReporteGlobal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ReporteResumen.resx">
+      <DependentUpon>Frm_ReporteResumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ReporteSaldoVenta.resx">
+      <DependentUpon>Frm_ReporteSaldoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_RepresentacionImpresaAntilavado.resx">
+      <DependentUpon>Frm_RepresentacionImpresaAntilavado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ResumenFlujoNeto.resx">
+      <DependentUpon>Frm_ResumenFlujoNeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_TipoCambio.resx">
+      <DependentUpon>Frm_TipoCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BusinessLayer\DataAccessLayer\Arrendadora.xsc">
+      <DependentUpon>Arrendadora.xsd</DependentUpon>
+    </None>
+    <None Include="BusinessLayer\DataAccessLayer\Arrendadora.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Arrendadora.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BusinessLayer\DataAccessLayer\Arrendadora.xss">
+      <DependentUpon>Arrendadora.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include="Resources\Antilavado_Arrendamiento.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Antilavado_Arrendamiento2.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Antilavado_Inmuebles.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Antilavado_Inmuebles2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\cargando.gif" />
+    <None Include="Resources\reportCh.png" />
+    <None Include="Resources\cancelCh.png" />
+    <None Include="Resources\buscarCh.png" />
+    <Content Include="IconoSAARI.ico" />
+    <Content Include="IconoSAARIred.ico" />
+    <Content Include="SaariBlue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxFastReport">
+      <Guid>{D3C6FB9B-9EDF-48F3-9A02-6D8320EAA9F5}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>True</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

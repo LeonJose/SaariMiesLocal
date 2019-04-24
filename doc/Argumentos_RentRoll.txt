@@ -1,0 +1,4 @@
+rentroll "C:\SaariDB\Formatos\Reportes\MIESLocal\RentRoll MOD_MULT1.frx" Admin
+
+
+rentroll "C:\SaariDB\Formatos\Reportes\MIESLocal\RentRoll_MULT3.frx" Admin

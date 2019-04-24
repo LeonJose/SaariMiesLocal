@@ -1,0 +1,66 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GestorReportes.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SaariODBC_ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Dsn=ArrDB2;uid=SYSDBA;password=masterkey</Value>
+    </Setting>
+    <Setting Name="RutaImagen_FichaInformativa" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\SaariDB\Imagenes\SaariRed.jpg</Value>
+    </Setting>
+    <Setting Name="RutaRepositorio" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\SaariDB\</Value>
+    </Setting>
+    <Setting Name="RutaAntilavado" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\SaariDB\SaariCFD\</Value>
+    </Setting>
+    <Setting Name="SaariCFD_ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=DEV10\MSSQL17SERVER;Initial Catalog=BD_Estanza;Persist Security Info=True;User ID=sa;Password=Rt123456/</Value>
+    </Setting>
+    <Setting Name="AxaptaTipoPoliza" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DI</Value>
+    </Setting>
+    <Setting Name="AxaptaTipoCuenta" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Contabilidad</Value>
+    </Setting>
+    <Setting Name="AxaptaCentroCosto" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OPOPVEIN1</Value>
+    </Setting>
+    <Setting Name="AxaptaFinanciera" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TRANOF</Value>
+    </Setting>
+    <Setting Name="AxaptaProposito" Type="System.String" Scope="User">
+      <Value Profile="(Default)">INM</Value>
+    </Setting>
+    <Setting Name="AxaptaGISobreVentas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">IVA16</Value>
+    </Setting>
+    <Setting Name="AxaptaGIPorVentaArticulos" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GEN</Value>
+    </Setting>
+    <Setting Name="AxaptaUsuario" Type="System.String" Scope="User">
+      <Value Profile="(Default)">000001</Value>
+    </Setting>
+    <Setting Name="ContpaqMask" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PolizaPorRango" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="rfcGenericoNacional" Type="System.String" Scope="User">
+      <Value Profile="(Default)">XAXX010101000</Value>
+    </Setting>
+    <Setting Name="rfcGenericoExtranjero" Type="System.String" Scope="User">
+      <Value Profile="(Default)">XEXX010101000</Value>
+    </Setting>
+    <Setting Name="PermisosInmobiliaria" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="usarSinComplementos" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CRPs" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

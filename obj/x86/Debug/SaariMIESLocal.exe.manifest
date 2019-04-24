@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <assemblyIdentity name="SaariMIESLocal.exe" version="3.4.8.1" processorArchitecture="x86" type="win32" />
+  <file name="fastreport3.dll" asmv2:size="7815168">
+    <hash xmlns="urn:schemas-microsoft-com:asm.v2">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hytLD4Bzev7RLAo7rFP9e/FEzfU=</dsig:DigestValue>
+    </hash>
+    <typelib tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" version="4.0" helpdir="" resourceid="0" flags="CONTROL,HASDISKIMAGE" />
+    <comClass clsid="{4b15360c-223c-4f3e-a306-8e5c19e2ea98}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxADODatabase" />
+    <comClass clsid="{75ae7a73-e752-4de6-a326-9c18c8d753f4}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxADOTable" />
+    <comClass clsid="{6b1a7a66-07f6-4b4c-a454-baa59fc951fa}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxADOQuery" />
+    <comClass clsid="{03130d57-85de-4146-9a54-78f42b5ea58e}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxPreviewX" description="TfrxPreviewX Control" />
+    <comClass clsid="{2d467b0e-5cc8-4a4b-8375-dec830438c49}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxReportClient" />
+    <comClass clsid="{4764040e-4222-4dec-9f2e-82d46e212b3a}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxReport" description="TfrxReport Object" />
+    <comClass clsid="{48c4e65f-53a7-4382-a3c4-482972d8623b}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxDesigner" />
+    <comClass clsid="{6f551236-04d8-4c1c-87ef-b2ad2ac3125b}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxUserDataSet" description="frxDataSet Object" />
+    <comClass clsid="{9207e7eb-4ce3-40e1-8a5a-77c43da9f503}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxActivePreviewForm" description="TfrxActivePreviewForm Control" />
+    <comClass clsid="{df2931ed-5a8b-43e4-a277-6ec7083b3431}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxGzipCompressor" />
+    <comClass clsid="{93915c68-ec6a-46d2-a417-8e70474d6278}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TFastScript" description="Fast Script interpreter" />
+    <comClass clsid="{618083d7-9448-4212-9ba1-e0bf1fa8bb5e}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxDispatchableComponent" />
+    <comClass clsid="{a9876e75-862b-41e0-8b0d-29dc4136a6fb}" threadingModel="Apartment" tlbid="{d3c6fb9b-9edf-48f3-9a02-6d8320eaa9f5}" progid="FastReport.TfrxDispatchableExports" />
+  </file>
+</assembly>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="GestorReportes">
+</Property><Property Name="Archivo de la solución" Value="C:\DVLMT\GestorReportes2.2\GestorReportes.sln">
+</Property><Property Name="Archivo de opciones de usuario" Value="C:\DVLMT\GestorReportes2.2\GestorReportes.suo">
+</Property><Property Name="Date" Value="miércoles, 21 de noviembre de 2012">
+</Property><Property Name="Time" Value="11:24 a.m.">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="GestorReportes.sln" Description="La copia C:\DVLMT\GestorReportes2.2\Backup\GestorReportes.sln del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="" Source="GestorReportes.suo" Description="La copia C:\DVLMT\GestorReportes2.2\Backup\GestorReportes.suo del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="GestorReportes.csproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto C:\DVLMT\GestorReportes2.2\Backup\GestorReportes.csproj">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="GestorReportes.csproj.user" Description="La copia de seguridad C:\DVLMT\GestorReportes2.2\Backup\GestorReportes.csproj.user del archivo se ha creado correctamente">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="BusinessLayer\ComponentLayer\Inmobiliaria.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\BusinessLayer\ComponentLayer\Inmobiliaria.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="BusinessLayer\ComponentLayer\Reporte.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\BusinessLayer\ComponentLayer\Reporte.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="BusinessLayer\DataAccessLayer\Arrendadora.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\BusinessLayer\DataAccessLayer\Arrendadora.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="BusinessLayer\DataAccessLayer\Arrendadora.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\BusinessLayer\DataAccessLayer\Arrendadora.Designer.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="BusinessLayer\DataAccessLayer\ODBCQuery.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\BusinessLayer\DataAccessLayer\ODBCQuery.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="FrxDataSet.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\FrxDataSet.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="FrxDataTable.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\FrxDataTable.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="FrxDataView.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\FrxDataView.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="PresentationLayer\Frm_Principal.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\PresentationLayer\Frm_Principal.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="PresentationLayer\Frm_Principal.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\PresentationLayer\Frm_Principal.Designer.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="Program.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\Program.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="Properties\AssemblyInfo.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="Properties\Resources.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="Properties\Settings.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="app.config" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\app.config">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="BusinessLayer\DataAccessLayer\Arrendadora.xsc" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\BusinessLayer\DataAccessLayer\Arrendadora.xsc">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="BusinessLayer\DataAccessLayer\Arrendadora.xsd" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\BusinessLayer\DataAccessLayer\Arrendadora.xsd">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="BusinessLayer\DataAccessLayer\Arrendadora.xss" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\BusinessLayer\DataAccessLayer\Arrendadora.xss">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="Properties\Settings.settings" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="SaariBlue.ico" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\SaariBlue.ico">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="FrxDataTable.resx" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\FrxDataTable.resx">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="FrxDataView.resx" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\FrxDataView.resx">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="PresentationLayer\Frm_Principal.resx" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\PresentationLayer\Frm_Principal.resx">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="Properties\Resources.resx" Description="Se realizó correctamente la copia de seguridad del archivo C:\DVLMT\GestorReportes2.2\Backup\Properties\Resources.resx">
+</Event><Event ErrorLevel="1" Project="GestorReportes" Source="GestorReportes.csproj" Description="La versión de destino de su proyecto es .NET Framework 2.0 ó 3.0. Si el proyecto utiliza ensamblados que requieren una versión más reciente de .NET Framework, no se podrá compilar. Puede cambiar la versión de .NET Framework haciendo clic en Propiedades en el menú del proyecto y seleccionando una nueva versión en el cuadro desplegable '.NET Framework'. (En Visual Basic, haga clic en el botón 'Opciones avanzadas del compilador...' en la pestaña Compilar).">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="GestorReportes.csproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="GestorReportes" Source="GestorReportes.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="GestorReportes.sln" Description="La solución se convirtió correctamente">
+</Event><Event ErrorLevel="3" Project="" Source="GestorReportes.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GestorReportes" Source="GestorReportes.csproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event></UpgradeLog>
