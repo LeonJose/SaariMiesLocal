@@ -132,6 +132,7 @@
     <Compile Include="BusinessLayer\ComponentLayer\CFDIsConsecutivos.cs" />
     <Compile Include="BusinessLayer\ComponentLayer\ComprobantePago.cs" />
     <Compile Include="BusinessLayer\ComponentLayer\ConsecutivosCFDIsFact.cs" />
+    <Compile Include="BusinessLayer\EntitiesPolizas\CuentaPorCobrarEntity.cs" />
     <Compile Include="BusinessLayer\ComponentLayer\CuentasXPagar306090.cs" />
     <Compile Include="BusinessLayer\ComponentLayer\EstatusCobranza.cs" />
     <Compile Include="BusinessLayer\ComponentLayer\ImpuestosReporte.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="BusinessLayer\ComponentLayer\Mantenimiento.cs" />
     <Compile Include="BusinessLayer\ComponentLayer\PolizaCopropietarios.cs" />
     <Compile Include="BusinessLayer\ComponentLayer\RecibosExpedidosPorFolio.cs" />
+    <Compile Include="BusinessLayer\ComponentLayer\ReporteCuentasPorCobrar.cs" />
     <Compile Include="BusinessLayer\ComponentLayer\ReporteEgreso.cs" />
     <Compile Include="BusinessLayer\ComponentLayer\ReporteGlobal.cs">
       <SubType>Code</SubType>
@@ -596,6 +598,12 @@
     <Compile Include="PresentationLayer\Frm_RepMant.Designer.cs">
       <DependentUpon>Frm_RepMant.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteCuentasPorCobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_ReporteCuentasPorCobrar.Designer.cs">
+      <DependentUpon>Frm_ReporteCuentasPorCobrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\Frm_ReporteEgresos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -797,6 +805,9 @@
     <EmbeddedResource Include="PresentationLayer\Frm_RepMant.resx">
       <DependentUpon>Frm_RepMant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_ReporteCuentasPorCobrar.resx">
+      <DependentUpon>Frm_ReporteCuentasPorCobrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Frm_ReporteEgresos.resx">
       <DependentUpon>Frm_ReporteEgresos.cs</DependentUpon>
     </EmbeddedResource>
@@ -856,7 +867,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
     <None Include="Resources\Antilavado_Arrendamiento.xsd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

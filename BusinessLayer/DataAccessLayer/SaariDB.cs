@@ -265,6 +265,7 @@ namespace GestorReportes.BusinessLayer.DataAccessLayer
                 OdbcCommand com = new OdbcCommand(sql, conexion);
                 List<ConjuntoEntity> listaConjuntos = new List<ConjuntoEntity>();
                 com.Parameters.Add("@IdInmb", OdbcType.VarChar).Value = id;
+                listaConjuntos.Add(new ConjuntoEntity() { ID ="Todos", Nombre = "*Todos"});
                 conexion.Open();
                 OdbcDataReader reader = com.ExecuteReader();
                 while (reader.Read())
@@ -8136,6 +8137,255 @@ where T07_EDIFICIO.P0709_ARRENDADORA = ? AND T37_AGENDA.P3702_FECHA >= ? AND T37
             {
                 conexion.Close();
                 return RepGlobal;
+            }
+        }
+        //add JL 24/04/2019
+        //EDIT BY UZ 02/05/2019
+        public static List<ReciboEntity> GetListaCtasxCobrar(string idArre, DateTime fechacorte)
+        {
+            OdbcConnection conexion = new OdbcConnection(Properties.Settings.Default.SaariODBC_ConnectionString);
+            string sql = @"Select P2402_ID_ARRENDATARIO, P2411_N_ARRENDATARIO, T07_EDIFICIO.P0703_NOMBRE, T24_HISTORIA_RECIBOS.CAMPO_DATE1,T24_HISTORIA_RECIBOS.CAMPO_DATE2, P2408_FECHA_PAGADO, P2404_PERIODO, 
+P2412_CONCEPTO, P2419_TOTAL, P2405_IMPORTE, T24_HISTORIA_RECIBOS.CAMPO5, T24_HISTORIA_RECIBOS.CAMPO_NUM4, T24_HISTORIA_RECIBOS.P2410_MONEDA,T24_HISTORIA_RECIBOS.P2426_TIPO_DOC, 
+P0712_IMPORTE_RENTA, T24_HISTORIA_RECIBOS.P2407_COMENTARIO, P2427_CTD_PAG, T07_EDIFICIO.CAMPO5 AS ID_MZNA, T07_EDIFICIO.CAMPO6 AS ID_LOTE, 
+T24_HISTORIA_RECIBOS.CAMPO10 AS PCT_INTERES_MORATORIO,  T01_ARRENDADORA.CAMPO_NUM1 AS TIPO_CALCULO, T24_HISTORIA_RECIBOS.CAMPO_NUM1 , P2444_ID_HIST_REC 
+from T24_HISTORIA_RECIBOS  
+Inner Join T04_CONTRATO On (T24_HISTORIA_RECIBOS.P2418_ID_CONTRATO = T04_CONTRATO.P0401_ID_CONTRATO) 
+Inner Join T07_EDIFICIO On (T04_CONTRATO.P0404_ID_EDIFICIO = T07_EDIFICIO.P0701_ID_EDIFICIO) 
+JOIN T01_ARRENDADORA ON T01_ARRENDADORA.P0101_ID_ARR = T24_HISTORIA_RECIBOS.P2401_ID_ARRENDADORA 
+Where T24_HISTORIA_RECIBOS.P2401_ID_ARRENDADORA =  ?  
+and T24_HISTORIA_RECIBOS.CAMPO_DATE1 <= ?    
+and T24_HISTORIA_RECIBOS.P2426_TIPO_DOC in ('A','E','M', 'V', 'Z' ) 
+And T24_HISTORIA_RECIBOS.P2406_STATUS =  '1'    
+Order By T24_HISTORIA_RECIBOS.P2411_N_ARRENDATARIO, T07_EDIFICIO.P0703_NOMBRE, T24_HISTORIA_RECIBOS.CAMPO_DATE1  ";
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(sql, conexion);
+                comando.Parameters.Add("@idArr", OdbcType.VarChar).Value = idArre;
+                comando.Parameters.Add("@fechacorte", OdbcType.Date).Value = fechacorte;
+                List<ReciboEntity> listCntasxCobrar = new List<ReciboEntity>();
+                conexion.Open();
+                OdbcDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    ReciboEntity recibo = new ReciboEntity();
+                    recibo.IDCliente = reader["P2402_ID_ARRENDATARIO"].ToString();
+                    recibo.NombreCliente = reader["P2411_N_ARRENDATARIO"].ToString();
+                    recibo.NombreInmueble = reader["P0703_NOMBRE"].ToString();
+                    recibo.VencimientoPago = reader["CAMPO_DATE1"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["CAMPO_DATE1"]);
+                    recibo.FechaPago = reader["P2408_FECHA_PAGADO"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["P2408_FECHA_PAGADO"]);
+                    recibo.Periodo = reader["P2404_PERIODO"].ToString();
+                    recibo.Concepto = reader["P2412_CONCEPTO"].ToString();
+                    recibo.IdManzana = reader["ID_MZNA"].ToString();
+                    recibo.IdLote = reader["ID_LOTE"].ToString();
+                    recibo.TipoCalculoMoratorios = reader["TIPO_CALCULO"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["TIPO_CALCULO"]);
+                    recibo.PctInteresMoratorio = reader["PCT_INTERES_MORATORIO"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PCT_INTERES_MORATORIO"]);
+                    try
+                    {
+                        recibo.FechaVencimientoMoratorios = Convert.ToDateTime(reader["CAMPO_DATE2"]);
+                    }
+                    catch
+                    {
+                        recibo.FechaVencimientoMoratorios = fechacorte;
+                    }
+                    recibo.importePorPagar = reader["P2427_CTD_PAG"] == DBNull.Value ? 0 : (decimal)reader["P2427_CTD_PAG"];
+                    //recibo.Total = reader["P2419_TOTAL"] == DBNull.Value ? 0 : (decimal)reader["P2419_TOTAL"];
+                    recibo.TipoDoc = reader["P2426_TIPO_DOC"].ToString();
+                    if (recibo.TipoDoc == "E")
+                    {
+                        recibo.PagoCapital = reader["CAMPO_NUM4"] == DBNull.Value ? 0 : (decimal)reader["CAMPO_NUM4"];
+                    }
+                    else if (recibo.TipoDoc == "V")
+                    {
+                        recibo.PagoCapital = reader["P2405_IMPORTE"] == DBNull.Value ? 0 : (decimal)reader["P2405_IMPORTE"];
+                    }
+                    else if (recibo.TipoDoc == "Z")
+                    {
+                        recibo.PagoCapital = reader["P2405_IMPORTE"] == DBNull.Value ? 0 : (decimal)reader["P2405_IMPORTE"];
+                    }
+                    else
+                    {
+                        recibo.PagoCapital = reader["P2405_IMPORTE"] == DBNull.Value ? 0 : (decimal)reader["P2405_IMPORTE"];
+                    }
+
+                    int Meses = 0;
+                    int Dias = 0;
+                    decimal Moratorios = 0;
+                    DateTime FechaTemp = Convert.ToDateTime(recibo.VencimientoPago);
+                    DateTime FechaPago = new DateTime();
+                    string idhistrec = reader["P2444_ID_HIST_REC"].ToString(); ;
+
+                    FechaPago = fechacorte;
+
+                    if (recibo.TipoCalculoMoratorios == 2) //INTERESES MES COMPLETO
+                    {
+                        while (FechaPago > FechaTemp)
+                        {
+                            FechaTemp = FechaTemp.AddMonths(1);
+                            //int mes = FechaTemp.Month;
+                            //int year = FechaTemp.Year;
+                            //DateTime fecha = new DateTime(year, mes, DateTime.DaysInMonth(year, mes));
+                            //FechaTemp = fecha;
+                            Meses++;
+                        }
+                        if (Meses > 0)
+                        {
+                            Moratorios = recibo.PagoCapital * (recibo.PctInteresMoratorio / 100) * Meses;
+                        }
+
+                    }
+                    else
+                    {
+                        TimeSpan tiempo = Convert.ToDateTime(FechaPago) - Convert.ToDateTime(recibo.FechaVencimientoMoratorios);
+                        Dias = tiempo.Days;
+                        if (Dias > 0)
+                        {
+                            Moratorios = recibo.PagoCapital * (recibo.PctInteresMoratorio / 100) / 30.4m * Dias;
+                        }
+
+                    }
+                    recibo.InteresesMoratorios = Moratorios;
+
+                    recibo.Importe = reader["P2405_IMPORTE"] == DBNull.Value ? 0 : (decimal)reader["P2405_IMPORTE"];
+                    //recibo.PagoParcial = reader["CAMPO_NUM4"] == DBNull.Value ? 0 : (decimal)reader["CAMPO_NUM4"];
+                    recibo.NombreConjunto = reader["CAMPO5"].ToString();
+                    recibo.Moneda = reader["P2410_MONEDA"].ToString();
+                    //recibo.TipoDoc = reader["P2426_TIPO_DOC"].ToString();                    
+                    recibo.Importe = reader["P0712_IMPORTE_RENTA"] == DBNull.Value ? 0 : (decimal)reader["P0712_IMPORTE_RENTA"];
+                    recibo.Comentario = reader["P2407_COMENTARIO"].ToString();
+                    listCntasxCobrar.Add(recibo);
+                }
+                reader.Close();
+                conexion.Close();
+                return listCntasxCobrar;
+            }
+            catch(Exception ex)
+            {
+                conexion.Close();
+                return null;
+            }
+        }
+        //EDIT BY UZ 02/05/2019
+        public static List<ReciboEntity> GetListaCtasxCobrar(string idArre, string idConjunto, DateTime fechacorte)
+        {
+            OdbcConnection conexion = new OdbcConnection(Properties.Settings.Default.SaariODBC_ConnectionString);
+            string sql = @"Select P2402_ID_ARRENDATARIO, P2411_N_ARRENDATARIO, T07_EDIFICIO.P0703_NOMBRE, T24_HISTORIA_RECIBOS.CAMPO_DATE1, T24_HISTORIA_RECIBOS.CAMPO_DATE2, P2408_FECHA_PAGADO, P2404_PERIODO, 
+P2412_CONCEPTO, P2419_TOTAL, P2405_IMPORTE, T24_HISTORIA_RECIBOS.CAMPO5, T24_HISTORIA_RECIBOS.CAMPO_NUM4, T24_HISTORIA_RECIBOS.P2410_MONEDA,T24_HISTORIA_RECIBOS.P2426_TIPO_DOC, 
+P0712_IMPORTE_RENTA, T24_HISTORIA_RECIBOS.P2407_COMENTARIO, P2427_CTD_PAG, T07_EDIFICIO.CAMPO5 AS ID_MZNA, T07_EDIFICIO.CAMPO6 AS ID_LOTE,  
+T24_HISTORIA_RECIBOS.CAMPO10 AS PCT_INTERES_MORATORIO,  T01_ARRENDADORA.CAMPO_NUM1 AS TIPO_CALCULO, T24_HISTORIA_RECIBOS.CAMPO_NUM1, P2444_ID_HIST_REC  
+from T24_HISTORIA_RECIBOS  
+Inner Join T04_CONTRATO On (T24_HISTORIA_RECIBOS.P2418_ID_CONTRATO = T04_CONTRATO.P0401_ID_CONTRATO) 
+Inner Join T07_EDIFICIO On (T04_CONTRATO.P0404_ID_EDIFICIO = T07_EDIFICIO.P0701_ID_EDIFICIO) 
+JOIN T01_ARRENDADORA ON T01_ARRENDADORA.P0101_ID_ARR = T24_HISTORIA_RECIBOS.P2401_ID_ARRENDADORA 
+Where T24_HISTORIA_RECIBOS.P2401_ID_ARRENDADORA =  ? 
+AND T24_HISTORIA_RECIBOS.CAMPO4 =  ? 
+and T24_HISTORIA_RECIBOS.CAMPO_DATE1 <= ?    
+and T24_HISTORIA_RECIBOS.P2426_TIPO_DOC in ('A','E','M', 'V', 'Z' ) 
+And T24_HISTORIA_RECIBOS.P2406_STATUS =  '1'   
+Order By T24_HISTORIA_RECIBOS.P2411_N_ARRENDATARIO, T07_EDIFICIO.P0703_NOMBRE, T24_HISTORIA_RECIBOS.CAMPO_DATE1   "; 
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(sql, conexion);
+                comando.Parameters.Add("@idArr", OdbcType.VarChar).Value = idArre;
+                comando.Parameters.Add("@idConj", OdbcType.VarChar).Value = idConjunto;
+                comando.Parameters.Add("@fechacorte", OdbcType.Date).Value = fechacorte;
+                List<ReciboEntity> listCntasxCobrar = new List<ReciboEntity>();
+                conexion.Open();
+                OdbcDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    ReciboEntity recibo = new ReciboEntity();
+                    recibo.NombreCliente = reader["P2411_N_ARRENDATARIO"].ToString();
+                    recibo.NombreInmueble = reader["P0703_NOMBRE"].ToString();
+                    recibo.VencimientoPago = reader["CAMPO_DATE1"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["CAMPO_DATE1"]);
+                    recibo.FechaPago = reader["P2408_FECHA_PAGADO"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["P2408_FECHA_PAGADO"]);
+                    recibo.Periodo = reader["P2404_PERIODO"].ToString();
+                    recibo.Concepto = reader["P2412_CONCEPTO"].ToString();
+                    recibo.IdManzana = reader["ID_MZNA"].ToString();
+                    recibo.IdLote = reader["ID_LOTE"].ToString();
+                    recibo.TipoCalculoMoratorios = reader["TIPO_CALCULO"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["TIPO_CALCULO"]);
+                    recibo.PctInteresMoratorio = reader["PCT_INTERES_MORATORIO"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PCT_INTERES_MORATORIO"]);
+                    try
+                    {
+                        recibo.FechaVencimientoMoratorios = Convert.ToDateTime(reader["CAMPO_DATE2"]);
+                    }
+                    catch
+                    {
+                        recibo.FechaVencimientoMoratorios = fechacorte;
+                    }
+                    //recibo.Total = reader["P2419_TOTAL"] == DBNull.Value ? 0 : (decimal)reader["P2419_TOTAL"];
+                    recibo.importePorPagar = reader["P2427_CTD_PAG"] == DBNull.Value ? 0 : (decimal)reader["P2427_CTD_PAG"];
+                    recibo.TipoDoc = reader["P2426_TIPO_DOC"].ToString();
+                    if (recibo.TipoDoc == "E")
+                    {
+                        recibo.PagoCapital = reader["CAMPO_NUM4"] == DBNull.Value ? 0 : (decimal)reader["CAMPO_NUM4"];
+                    }
+                    else if (recibo.TipoDoc == "V")
+                    {
+                        recibo.PagoCapital = reader["P2405_IMPORTE"] == DBNull.Value ? 0 : (decimal)reader["P2405_IMPORTE"];
+                    }
+                    else if (recibo.TipoDoc == "Z")
+                    {
+                        recibo.PagoCapital = reader["P2405_IMPORTE"] == DBNull.Value ? 0 : (decimal)reader["P2405_IMPORTE"];
+                    }
+                    else
+                    {
+                        recibo.PagoCapital = reader["P2405_IMPORTE"] == DBNull.Value ? 0 : (decimal)reader["P2405_IMPORTE"];
+                    }
+                    int Meses = 0;
+                    int Dias = 0;
+                    decimal Moratorios = 0;
+                    DateTime FechaTemp = Convert.ToDateTime(recibo.FechaVencimientoMoratorios);
+                    DateTime FechaPago = new DateTime();
+                    string idhistrec = reader["P2444_ID_HIST_REC"].ToString(); ;
+                   
+                    FechaPago = fechacorte;                   
+
+                    if(recibo.TipoCalculoMoratorios == 2) //INTERESES MES COMPLETO
+                    {
+                        while(FechaPago> FechaTemp)
+                        {
+                            FechaTemp = FechaTemp.AddMonths(1);
+                            //int mes = FechaTemp.Month;
+                            //int year = FechaTemp.Year;
+                            //DateTime fecha = new DateTime(year, mes, DateTime.DaysInMonth(year, mes));
+                            //FechaTemp = fecha;
+                            Meses++;
+                        }
+                        if(Meses >0)
+                        {
+                            Moratorios = recibo.PagoCapital * (recibo.PctInteresMoratorio / 100) * Meses;
+                        }
+                        
+                    }
+                    else
+                    {                       
+                        TimeSpan tiempo =  Convert.ToDateTime(FechaPago) - Convert.ToDateTime( recibo.FechaVencimientoMoratorios);
+                        Dias = tiempo.Days;
+                        if(Dias>0)
+                        {
+                            Moratorios = recibo.PagoCapital * (recibo.PctInteresMoratorio / 100) / 30.4m * Dias;
+                        }
+                       
+                    }
+                    recibo.InteresesMoratorios = Moratorios;
+                    
+                    //recibo.Importe = reader["P2405_IMPORTE"] == DBNull.Value ? 0 : (decimal)reader["P2405_IMPORTE"];
+                    
+                    recibo.NombreConjunto = reader["CAMPO5"].ToString();
+                    recibo.Moneda = reader["P2410_MONEDA"].ToString();
+                                        
+                    recibo.Importe = reader["P0712_IMPORTE_RENTA"] == DBNull.Value ? 0 : (decimal)reader["P0712_IMPORTE_RENTA"];
+                    recibo.Comentario = reader["P2407_COMENTARIO"].ToString();
+                    listCntasxCobrar.Add(recibo);
+                }
+                reader.Close();
+                conexion.Close();
+                return listCntasxCobrar;
+            }
+            catch (Exception ex)
+            {
+                conexion.Close();
+                return null;
             }
         }
 

@@ -49,6 +49,10 @@ namespace GestorReportes.BusinessLayer.EntitiesReportes
         public decimal Importe60 { get; set; }
         public decimal Importe90 { get; set; }
         public decimal ImporteMas90 { get; set; }
+        public decimal ImporteD30 { get; set; }
+        public decimal ImporteD60 { get; set; }
+        public decimal ImporteD90 { get; set; }
+        public decimal ImporteDMas90 { get; set; }
         public decimal Descuento { get; set; }
         public string IDInmobiliaria { get; set; }
         public string Referencia { get; set; }
@@ -77,12 +81,16 @@ namespace GestorReportes.BusinessLayer.EntitiesReportes
         public decimal CtdPag { get; set; }
         public DateTime FechaVencimiento { get; set; }
         public DateTime FechaMoratorios { get; set; }
+        public DateTime FechaVencimientoMoratorios { get; set; }
         public decimal InteresesMoratorios { get; set; }
+        public decimal TipoCalculoMoratorios { get; set; }
+        public decimal PctInteresMoratorio { get; set; }
         public string Info { get; set; }
         public string NombreInmobiliaria { get; set; }
         public string RutaPdfCFDI { get; set; }
         public decimal saldoAFavor { get; set; }
         public decimal TotalPagado { get; set; }
+        public decimal PagoCapital { get; set; }
 
         // Agregago para nuevo reporte de recibos cobrados por folio, y para realizar conversion de dolares apartir de la vesion 
         //3.3.8.1 - 08/02/2017
@@ -118,10 +126,16 @@ namespace GestorReportes.BusinessLayer.EntitiesReportes
         public string NombreSubconjunto { get; set; }
         public string IdEdificio { get; set; }
         public string IdCentroSubConjunto { get; set; }
+        public string IdLote { get; set; }
+        public string IdManzana { get; set; }
         //public decimal TotalImporte
         //{
         //    get { return Importes == null ? 0 : Importes.Sum(s => s.Importe); }
 
         //}
+        public decimal InteresesMoratorios30 { get; set; }
+        public decimal InteresesMoratorios60 { get; set; }
+        public decimal InteresesMoratorios90 { get; set; }
+        public decimal importePorPagar { get; internal set; }
     }
 }

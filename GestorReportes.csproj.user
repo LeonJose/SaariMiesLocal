@@ -16,6 +16,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <StartArguments>repimpanti  "C:\SaariDB\Formatos\Reportes\ReporteAntilavado.frx"</StartArguments>
+    <StartArguments>reporteCuentasPorCobrar "C:\SaariDB\Formatos\Reportes\\ReporteCuentasPorCobrar.frx" Administrador</StartArguments>
   </PropertyGroup>
 </Project>

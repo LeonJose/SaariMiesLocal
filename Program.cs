@@ -21,6 +21,21 @@ namespace GestorReportes
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            string args = string.Empty;
+            string linea = string.Empty;
+            string[] parameters = new string[parametros.Length];
+            int i = 0;
+            foreach (string a in parametros)
+            {
+                args += a.Replace(@"\\", @"\") + " | ";                
+                parameters[i] = a.Replace(@"\\",@"\");
+                linea += parameters[i];
+                i++;
+            }
+            parameters.CopyTo(parametros, 0);
+            //MessageBox.Show("Argumentos :" + args);
+            //MessageBox.Show("Argumentos :" + linea);
+
             //parametros[0] = "cartera306090contratos";
             try
             {
@@ -168,11 +183,14 @@ namespace GestorReportes
                     Application.Run(new Frm_EstatusCobranza(parametros[1], parametros[2]));
                 else if (parametros[0] == "comprobantesPago")
                     Application.Run(new Frm_ComprobantesDePago(parametros[1], parametros[2]));
+                else if (parametros[0] == "reporteCuentasPorCobrar")
+                    Application.Run(new Frm_ReporteCuentasPorCobrar(parametros[1], parametros[2]));
                 else
                     Application.Run(new Frm_Principal(parametros));
             }
             catch (Exception ex)
             {
+
             }
         }             
     }

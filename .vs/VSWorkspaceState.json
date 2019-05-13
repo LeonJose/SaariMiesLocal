@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PresentationLayer"
   ],
+  "SelectedNode": "\\PresentationLayer\\Frm_AmortizacionRentas.Designer.cs",
   "PreviewInSolutionExplorer": false
 }
